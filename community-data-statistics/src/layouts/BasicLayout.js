@@ -88,8 +88,10 @@ class BasicLayout extends React.Component {
           </Header>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>用户管理</Breadcrumb.Item>
-              <Breadcrumb.Item>社团管理</Breadcrumb.Item>
+              <Breadcrumb.Item>人口数据</Breadcrumb.Item>
+              <Breadcrumb.Item>经济数据</Breadcrumb.Item>
+              <Breadcrumb.Item>工业数据</Breadcrumb.Item>
+              <Breadcrumb.Item>天气展示</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: '80vh' }}>
               <Switch>
