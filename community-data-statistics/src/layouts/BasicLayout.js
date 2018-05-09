@@ -40,7 +40,7 @@ class BasicLayout extends React.Component {
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <SubMenu
               key="sub1"
-              title={<span><Icon type="user" /><span>城市综合数据</span></span>}
+              title={<span><Icon type="area-chart" /><span>城市综合数据</span></span>}
             >
               <Menu.Item key="1">
                 <Link to="/city/population">人口数据</Link>
@@ -57,10 +57,10 @@ class BasicLayout extends React.Component {
             </SubMenu>
             <SubMenu
               key="sub2"
-              title={<span><Icon type="team" /><span>社区管理</span></span>}
+              title={<span><Icon type="table" /><span>社区管理</span></span>}
             >
-              <Menu.Item key="4">人员数据</Menu.Item>
-              <Menu.Item key="5">企业数据</Menu.Item>
+              <Menu.Item key="5">人员数据</Menu.Item>
+              <Menu.Item key="6">企业数据</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
