@@ -9,6 +9,8 @@ import {
 } from 'antd';
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts';
 
+import options from '../../assets/addressData';
+
 class Economics extends React.Component {
   render() {
     const data = [
@@ -28,23 +30,6 @@ class Economics extends React.Component {
       'GDP': { min: 0 },
       'year': {range: [ 0 , 1] }
     };
-    const options = [{
-      value: '保定',
-      label: '保定',
-      children: [{
-        value: '莲池区',
-        label: '莲池区',
-      }, {
-        value: '徐水区',
-        label: '徐水区',
-      }, {
-        value: '竞秀区',
-        label: '竞秀区',
-      }, {
-        value: '清苑区',
-        label: '清苑区',
-      }],
-    }]
     return (
       <div style={{ overflow: 'scroll' }}>
         <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" />

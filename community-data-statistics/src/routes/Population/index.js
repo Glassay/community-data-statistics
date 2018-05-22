@@ -10,6 +10,7 @@ import {
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 
 import styles from './index.less';
+import options from '../../assets/addressData';
 
 class Population extends React.Component {
   handleChange = (value) => {
@@ -30,24 +31,6 @@ class Population extends React.Component {
       count: { alias: '人口数' },
       genre: { alias: '区间' }
     };
-
-    const options = [{
-      value: '保定',
-      label: '保定',
-      children: [{
-        value: '莲池区',
-        label: '莲池区',
-      }, {
-        value: '徐水区',
-        label: '徐水区',
-      }, {
-        value: '竞秀区',
-        label: '竞秀区',
-      }, {
-        value: '清苑区',
-        label: '清苑区',
-      }],
-    }]
     return (
       <div>
         <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" />

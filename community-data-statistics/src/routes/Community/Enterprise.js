@@ -10,6 +10,8 @@ import {
   Divider
 } from 'antd';
 
+import options from '../../assets/addressData';
+
 class Enterprise extends React.Component {
   render() {
     const columns = [{
@@ -43,23 +45,6 @@ class Enterprise extends React.Component {
         </span>
       ),
     }];
-    const options = [{
-      value: '保定',
-      label: '保定',
-      children: [{
-        value: '莲池区',
-        label: '莲池区',
-      }, {
-        value: '徐水区',
-        label: '徐水区',
-      }, {
-        value: '竞秀区',
-        label: '竞秀区',
-      }, {
-        value: '清苑区',
-        label: '清苑区',
-      }],
-    }]
     return (
       <div>
         <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" />
