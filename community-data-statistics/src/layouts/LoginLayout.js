@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { connect } from 'dva';
-import { Layout, Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Layout, Form, Icon, Input, Button } from 'antd';
 
 import styles from './LoginLayout.less';
 
@@ -42,7 +42,7 @@ class LoginLayout extends React.Component {
               {getFieldDecorator('password', {
                 rules: [{ required: true, message: '请输入密码！' }],
               })(
-                <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Password" />
               )}
             </FormItem>
             <FormItem>

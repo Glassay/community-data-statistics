@@ -7,6 +7,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@antv/data-set": "^0.8.9",
     "antd": "^3.5.0",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.7.0",
