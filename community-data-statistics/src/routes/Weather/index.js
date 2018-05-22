@@ -4,6 +4,9 @@
  */
 
 import React from 'react';
+import {
+  Cascader,
+} from 'antd';
 import { connect } from 'dva';
 
 class Weather extends React.Component {
@@ -13,11 +16,30 @@ class Weather extends React.Component {
   //   })
   // }
   render() {
+    const options = [{
+      value: '保定',
+      label: '保定',
+      children: [{
+        value: '莲池区',
+        label: '莲池区',
+      }, {
+        value: '徐水区',
+        label: '徐水区',
+      }, {
+        value: '竞秀区',
+        label: '竞秀区',
+      }, {
+        value: '清苑区',
+        label: '清苑区',
+      }],
+    }]
     const { loading } = this.props;
     // console.log('data>>>>>>', data);
     console.log('loading>>>>>', loading);
     return (
-      <div>天气展示</div>
+      <div>
+        <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" />
+      </div>
     );
   }
 }

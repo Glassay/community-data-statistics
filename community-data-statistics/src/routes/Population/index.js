@@ -7,7 +7,7 @@ import React from 'react';
 import {
   Cascader,
 } from 'antd';
-import { Chart, Geom, Axis, Tooltip, Legend, Coord } from 'bizcharts';
+import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 
 import styles from './index.less';
 
@@ -18,17 +18,17 @@ class Population extends React.Component {
   render() {
     // 数据源
     const data = [
-      { genre: 'Sports', sold: 275, income: 2300 },
-      { genre: 'Strategy', sold: 115, income: 667 },
-      { genre: 'Action', sold: 120, income: 982 },
-      { genre: 'Shooter', sold: 350, income: 5271 },
-      { genre: 'Other', sold: 150, income: 3710 }
+      { genre: '儿童', count: 275 },
+      { genre: '少年', count: 115 },
+      { genre: '青年', count: 120 },
+      { genre: '中年', count: 350 },
+      { genre: '老年', count: 150 }
     ];
     
     // 定义度量
     const cols = {
-      sold: { alias: '销售量' },
-      genre: { alias: '游戏种类' }
+      count: { alias: '人口数' },
+      genre: { alias: '区间' }
     };
 
     const options = [{
@@ -37,31 +37,15 @@ class Population extends React.Component {
       children: [{
         value: '莲池区',
         label: '莲池区',
-        children: [{
-          value: '韩庄乡',
-          label: '韩庄乡',
-        }],
       }, {
         value: '徐水区',
         label: '徐水区',
-        children: [{
-          value: '瑞祥大街',
-          label: '瑞祥大街',
-        }]
       }, {
         value: '竞秀区',
         label: '竞秀区',
-        children: [{
-          value: '瑞祥大街',
-          label: '瑞祥大街',
-        }]
       }, {
         value: '清苑区',
         label: '清苑区',
-        children: [{
-          value: '瑞祥大街',
-          label: '瑞祥大街',
-        }]
       }],
     }]
     return (
@@ -69,10 +53,10 @@ class Population extends React.Component {
         <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" />
         <Chart className={styles.chart} width={600} height={400} data={data} scale={cols}>
           <Axis name="genre" />
-          <Axis name="sold" />
+          <Axis name="count" />
           <Legend position="bottom" dy={-20} />
           <Tooltip />
-          <Geom type="interval" position="genre*sold" color="genre" />
+          <Geom type="interval" position="genre*count" color="genre" />
         </Chart>
       </div>
     );

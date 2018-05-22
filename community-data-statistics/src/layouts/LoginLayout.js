@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-// import { connect } from 'dva';
+import { connect } from 'dva';
 import { Layout, Form, Icon, Input, Button, Checkbox } from 'antd';
 
 import styles from './LoginLayout.less';
@@ -19,7 +19,7 @@ class LoginLayout extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values);
         this.props.dispatch({
-          type: 'login/adminLogin',
+          type: 'users/usersLogin',
           payload: values,
         })
       }
@@ -42,17 +42,10 @@ class LoginLayout extends React.Component {
               {getFieldDecorator('password', {
                 rules: [{ required: true, message: '请输入密码！' }],
               })(
-                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
               )}
             </FormItem>
             <FormItem>
-              {getFieldDecorator('remember', {
-                valuePropName: 'checked',
-                initialValue: true,
-              })(
-                <Checkbox>Remember me</Checkbox>
-              )}
-              <a className={styles.formForget} href="">Forgot password</a>
               <Button type="primary" htmlType="submit" className={styles.formButton}>
                 登录
               </Button>
@@ -65,4 +58,4 @@ class LoginLayout extends React.Component {
 }
 LoginLayout = Form.create({})(LoginLayout);
 
-export default LoginLayout;
+export default connect(({ users }) => ({ ...users }))(LoginLayout);

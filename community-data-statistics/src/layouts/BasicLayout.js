@@ -12,6 +12,8 @@ import Economics from '../routes/Economics';
 import Industrial from '../routes/Industrial';
 import Population from '../routes/Population';
 import Weather from '../routes/Weather';
+import CPopulation from '../routes/Community/CPopulation';
+import Enterprise from '../routes/Community/Enterprise';
 
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -59,8 +61,12 @@ class BasicLayout extends React.Component {
               key="sub2"
               title={<span><Icon type="table" /><span>社区管理</span></span>}
             >
-              <Menu.Item key="5">人员数据</Menu.Item>
-              <Menu.Item key="6">企业数据</Menu.Item>
+              <Menu.Item key="5">
+                <Link to="/city/community-population">人员数据</Link>
+              </Menu.Item>
+              <Menu.Item key="6">
+                <Link to="/city/community-enterprise">企业数据</Link>
+              </Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
@@ -99,6 +105,8 @@ class BasicLayout extends React.Component {
                 <Route path="/city/economics" render={() => <Economics />} />
                 <Route path="/city/industrial" render={() => <Industrial />} />
                 <Route path="/city/weather" render={() => <Weather />}/>
+                <Route path="/city/community-population" render={() => <CPopulation />} />
+                <Route path="/city/community-enterprise" render={() => <Enterprise />} />
               </Switch>
             </div>
           </Content>
