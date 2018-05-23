@@ -1,0 +1,109 @@
+.customArrowThumb{
+  height: 320px;
+}
+
+.customArrowThumb .userArrow {
+  top: 50%;
+  margin-top: -40px;
+}
+
+.customArrowThumb .userArrow .imgWrapper {
+  width: 120px;
+  height: 80px;
+  float: left;
+  position: relative;
+}
+
+.customArrowThumb .userArrow .imgWrapper li {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+
+.customArrowThumb .userArrow .arrow {
+  width: 20px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.customArrowThumb .userArrow .arrow:before,
+.customArrowThumb .userArrow .arrow:after {
+  width: 2px;
+  height: 15px;
+  background: #fff;
+  display: block;
+  content: ' ';
+  position: absolute;
+}
+
+.customArrowThumb .userArrow.next {
+  right: -120px;
+}
+
+.customArrowThumb .userArrow.next .arrow {
+  float: left;
+}
+
+.customArrowThumb .userArrow.next .arrow:before {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+  top: 28px;
+  left: 10px;
+}
+
+.customArrowThumb .userArrow.next .arrow:after {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  bottom: 27px;
+  left: 10px;
+}
+
+.customArrowThumb .userArrow.prev {
+  left: -120px;
+}
+
+.customArrowThumb .userArrow.prev .arrow {
+  float: right;
+}
+
+.customArrowThumb .userArrow.prev .arrow:before {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  top: 28px;
+  left: 8px;
+}
+
+.customArrowThumb .userArrow.prev .arrow:after {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+  bottom: 27px;
+  left: 8px;
+}
+
+.customArrowThumb .userThumb {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  height: 40px;
+}
+
+.customArrowThumb .userThumb > span {
+  width: 50px;
+  height: 30px;
+  margin: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -webkit-transition: background .3s;
+          transition: background .3s;
+  background: transparent;
+}
+
+.customArrowThumb .userThumb > span i {
+  display: block;
+  width: 46px;
+  height: 26px;
+  margin: 2px;
+  background-size: cover;
+  background-position: center;
+}

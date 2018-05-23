@@ -8,8 +8,7 @@ export default {
     userInfo: {
       userName: '111',
       password: '111',
-    },
-    // status: false
+    }
   },
 
   effects: {
