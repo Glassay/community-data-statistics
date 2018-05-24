@@ -13,8 +13,8 @@ import Economics from '../routes/Economics';
 import Industrial from '../routes/Industrial';
 import Population from '../routes/Population';
 import Weather from '../routes/Weather';
-import CPopulation from '../routes/Community/CPopulation';
-import Enterprise from '../routes/Community/Enterprise';
+import CPopulation from '../routes/Staff/CPopulation';
+import Enterprise from '../routes/Staff/Enterprise';
 
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;

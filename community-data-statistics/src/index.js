@@ -15,7 +15,8 @@ app.use(createLoading());
 app.model(require('./models/weather').default);
 app.model(require('./models/users').default);
 app.model(require('./models/population').default);
-app.model(require('./models/industrial').default)
+app.model(require('./models/industrial').default);
+app.model(require('./models/enterprise').default);
 
 // 4. Router
 app.router(require('./router').default);

@@ -306,7 +306,7 @@ class CPopulation extends React.Component {
               </Button>
             </FormItem>
           </Form>
-          <Cascader style={{ marginTop: 15 }}options={options} onChange={this.handleChange} placeholder="选择地区" />
+          <Cascader style={{ marginTop: 15 }} options={options} onChange={this.handleChange} placeholder="选择地区" />
           <Button
             type="primary"
             style={{ marginTop: 15, marginLeft: 30 }}
