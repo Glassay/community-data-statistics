@@ -56,6 +56,7 @@ class LoginLayout extends React.Component {
     );
   }
 }
+
 LoginLayout = Form.create({})(LoginLayout);
 
 export default connect(({ users }) => ({ ...users }))(LoginLayout);

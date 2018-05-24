@@ -9,7 +9,7 @@ import NProgress from 'nprogress';
 //   requestTimeOut
 // }                 from './config'
 
-// axios.defaults.baseURL = "http://127.0.0.1:7001";
+axios.defaults.baseURL = "http://192.168.0.103:8080";
 axios.defaults.timeout = 10000;
 axios.defaults.withCredentials = true;
 
@@ -85,32 +85,3 @@ export default function request (options) {
 export const setToken = function (authToken) {
   axios.defaults.headers.common.Authorization = `Bearer ${authToken}`
 }
-
-// function parseJSON(response) {
-//   return response.json();
-// }
-
-// function checkStatus(response) {
-//   if (response.status >= 200 && response.status < 300) {
-//     return response;
-//   }
-
-//   const error = new Error(response.statusText);
-//   error.response = response;
-//   throw error;
-// }
-
-// /**
-//  * Requests a URL, returning a promise.
-//  *
-//  * @param  {string} url       The URL we want to request
-//  * @param  {object} [options] The options we want to pass to "fetch"
-//  * @return {object}           An object containing either "data" or "err"
-//  */
-// export default function request(url, options) {
-//   return fetch(url, options)
-//     .then(checkStatus)
-//     .then(parseJSON)
-//     .then(data => ({ data }))
-//     .catch(err => ({ err }));
-// }

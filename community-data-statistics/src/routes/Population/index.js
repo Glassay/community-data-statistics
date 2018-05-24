@@ -7,6 +7,7 @@ import React from 'react';
 import {
   Cascader,
 } from 'antd';
+import { connect } from 'dva';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 
 import styles from './index.less';
@@ -19,10 +20,16 @@ class Population extends React.Component {
 
   handleChange = (value) => {
     console.log(value);
+    console.log(value[0] + value[1]);
+    this.props.dispatch({
+      type: 'population/getAge',
+      payload: value[0] + value[1]
+    })
   }
 
   render() {
     // 数据源
+    // const { age } = this.props;
     const data = [
       { genre: '儿童', count: 275 },
       { genre: '少年', count: 115 },
@@ -55,4 +62,6 @@ class Population extends React.Component {
   }
 }
 
-export default Population;
+export default connect(state => ({
+  age: state.population.age
+}))(Population);
