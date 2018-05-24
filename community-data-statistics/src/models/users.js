@@ -27,7 +27,7 @@ export default {
       yield localStorage.removeItem('isLogin')
       console.log('loginOUtstatus>>>>', localStorage.isLogin);
       console.log('loaclStorage++++++', localStorage);
-      yield put(routerRedux.push('/login'))
+      yield put(routerRedux.push('/'))
     }
   },
 

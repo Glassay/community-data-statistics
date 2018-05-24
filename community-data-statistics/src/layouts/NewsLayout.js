@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'dva/router';
-import { Layout, List, Card } from 'antd';
+import { Layout, List, Card, Modal } from 'antd';
 
 import Carousel from '../components/Carousel';
 import styles from './NewsLayout.less';
@@ -8,8 +8,36 @@ import styles from './NewsLayout.less';
 const { Header, Content, Footer } = Layout;
 
 export default class NewsLayout extends React.Component {
+  state = {
+    loading: false,
+    visible: false,
+    index: 0
+  }
+  showModal = (i) => {
+    this.setState({
+      visible: true,
+      index: i
+    });
+    console.log('i++++++++', i)
+  }
+  handleOk = () => {
+    this.setState({ loading: true });
+    setTimeout(() => {
+      this.setState({ loading: false, visible: false });
+    }, 3000);
+  }
+  handleCancel = () => {
+    this.setState({ visible: false });
+  }
+  // readNews = () => {
+  //   this.props.dispatch({
+
+  //   })
+  // }
   render() {
+    const { visible } = this.state;
     const listData = [];
+    console.log('data>>>>>', listData)
     for (let i = 0; i < 23; i++) {
       listData.push({
         id: i,
@@ -30,9 +58,18 @@ export default class NewsLayout extends React.Component {
             style={{ marginTop: 50 }}
             grid={{ gutter: 16, column: 4 }}
             dataSource={listData}
-            renderItem={item => (
+            renderItem={(item, index) => (
               <List.Item>
-                <Card style={{ margin: 10 }} title={item.title}>{item.content}</Card>
+                <Card onClick={() => this.showModal(index)} style={{ margin: 10 }} title={item.title}>{item.content}</Card>
+                <Modal
+                  visible={visible}
+                  title={listData[this.state.index].title}
+                  onOk={this.handleOk}
+                  onCancel={this.handleCancel}
+                  footer={null}
+                >
+                  <p>{listData[this.state.index].content}</p>
+                </Modal>
               </List.Item>
             )}
           />

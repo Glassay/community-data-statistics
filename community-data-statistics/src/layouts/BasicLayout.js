@@ -56,7 +56,11 @@ class BasicLayout extends React.Component {
                   <h1>城市社区管理</h1>
                 </Link>
               </div>
-              <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+              <Menu
+                theme="dark"
+                defaultOpenKeys={['sub1']}
+                mode="inline"
+              >
                 <SubMenu
                   key="sub1"
                   title={<span><Icon type="area-chart" /><span>城市综合数据</span></span>}

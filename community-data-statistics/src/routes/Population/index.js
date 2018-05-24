@@ -13,9 +13,14 @@ import styles from './index.less';
 import options from '../../assets/addressData';
 
 class Population extends React.Component {
+  state = {
+    select: null
+  }
+
   handleChange = (value) => {
     console.log(value);
   }
+
   render() {
     // 数据源
     const data = [
@@ -33,7 +38,11 @@ class Population extends React.Component {
     };
     return (
       <div>
-        <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" />
+        <Cascader
+          options={options}
+          onChange={this.handleChange}
+          placeholder="选择地区"
+        />
         <Chart className={styles.chart} width={600} height={400} data={data} scale={cols}>
           <Axis name="genre" />
           <Axis name="count" />
