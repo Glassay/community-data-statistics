@@ -15,6 +15,8 @@ import Population from '../routes/Population';
 import Weather from '../routes/Weather';
 import CPopulation from '../routes/Staff/CPopulation';
 import Enterprise from '../routes/Staff/Enterprise';
+import Building from '../routes/Building';
+import Community from '../routes/Community';
 
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -134,6 +136,8 @@ class BasicLayout extends React.Component {
                     <Route path="/city/weather" render={() => <Weather />}/>
                     <Route path="/city/community-population" render={() => <CPopulation />} />
                     <Route path="/city/community-enterprise" render={() => <Enterprise />} />
+                    <Route path="/city/community-building" render={() => <Building />} />
+                    <Route path="/city/community-name" render={() => <Community />} />
                   </Switch>
                 </div>
               </Content>
