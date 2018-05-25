@@ -88,6 +88,12 @@ class BasicLayout extends React.Component {
                   <Menu.Item key="6">
                     <Link to="/city/community-enterprise">企业数据</Link>
                   </Menu.Item>
+                  <Menu.Item key="7">
+                    <Link to="/city/community-name">小区数据</Link>
+                  </Menu.Item>
+                  <Menu.Item key="8">
+                    <Link to="/city/community-building">楼房数据</Link>
+                  </Menu.Item>
                 </SubMenu>
               </Menu>
             </Sider>

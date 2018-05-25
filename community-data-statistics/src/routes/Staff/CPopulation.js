@@ -202,7 +202,7 @@ class CPopulation extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { data } = this.props;
+    const { data, loading } = this.props;
     console.log('data+++++++', data);
     const columns = [{
       title: '姓名',
@@ -319,6 +319,7 @@ class CPopulation extends React.Component {
             rowKey="ID"
             columns={columns}
             dataSource={data.info}
+            loading={loading}
           />
         </div>
         }
@@ -330,5 +331,6 @@ class CPopulation extends React.Component {
 CPopulation = Form.create({})(CPopulation);
 
 export default connect(state => ({
-  data: state.population.data
+  data: state.population.data,
+  loading: state.loading.models.population
 }))(CPopulation);
