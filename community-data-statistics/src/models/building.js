@@ -12,7 +12,6 @@ export default {
   effects: {
     *getInfos({ payload }, { call, put }) {
       const res = yield call(getAllInfo, payload);
-      console.log('res>>>>>>', res);
       yield put({
         type: 'updateInfo',
         payload: res
@@ -21,7 +20,6 @@ export default {
 
     *insertInfos({ payload }, { call, put }) {
       const res = yield call(insertInfo, payload);
-      console.log('insertInfo>>>>', res);
       if(res.status === 'success') {
         message.success('添加成功！');
         const refreshRes = yield call(getAllInfo);
@@ -46,7 +44,6 @@ export default {
       } else {
         message.error('删除失败！');
       }
-      console.log('deleteInfo>>', res);
     },
 
     *searchInfos({ payload }, { call, put }) {
@@ -56,7 +53,6 @@ export default {
       } else {
         message.error('查找失败！');
       }
-      console.log('searchInfo>>>>', res);
       yield put({
         type: 'updateInfo',
         payload: res
@@ -65,7 +61,16 @@ export default {
 
     *modifyInfos({ payload }, { call, put }) {
       const res = yield call(modifyInfo, payload)
-      console.log('modifyres>>>>>>', res);
+      if(res.status === 'success') {
+        const refreshRes = yield call(getAllInfo);
+        yield put({
+          type: 'updateInfo',
+          payload: refreshRes
+        })
+        message.success('修改成功！');
+      } else {
+        message.error('修改失败！');
+      }
     },
   },
 

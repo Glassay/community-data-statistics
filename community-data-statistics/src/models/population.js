@@ -25,9 +25,9 @@ export default {
           type: 'updateInfo',
           payload: refreshData
         })
-        message.success('查询成功！');
+        message.success('添加成功！');
       } else {
-        message.error('查询失败！');
+        message.error('添加失败！');
       }
       console.log('insertResult>>>>', res);
     },
