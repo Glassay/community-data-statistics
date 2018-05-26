@@ -19,6 +19,16 @@ export default {
   effects: {
     *insertData({ payload }, { call, put }) {
       const res = yield call(insertPopulation, payload);
+      if(res.status === 'success') {
+        const refreshData = yield call(getPopulation);
+        yield put({
+          type: 'updateInfo',
+          payload: refreshData
+        })
+        message.success('查询成功！');
+      } else {
+        message.error('查询失败！');
+      }
       console.log('insertResult>>>>', res);
     },
 

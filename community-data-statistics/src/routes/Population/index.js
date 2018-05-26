@@ -4,15 +4,15 @@
  */
 
 import React from 'react';
-import {
-  Cascader,
-  Button
-} from 'antd';
+// import {
+//   Cascader,
+//   Button
+// } from 'antd';
 import { connect } from 'dva';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 
 import styles from './index.less';
-import options from '../../assets/addressData';
+// import options from '../../assets/addressData';
 
 class Population extends React.Component {
   state = {
@@ -57,7 +57,7 @@ class Population extends React.Component {
     };
     return (
       <div>
-        <Cascader
+        {/* <Cascader
           options={options}
           onChange={this.handleChange}
           placeholder="选择地区"
@@ -68,7 +68,7 @@ class Population extends React.Component {
           onClick={this.handleSearch}
         >
           查询
-        </Button>
+        </Button> */}
         <Chart className={styles.chart} width={600} height={400} data={data} scale={cols}>
           <Axis name="genre" />
           <Axis name="count" />

@@ -4,13 +4,13 @@
  */
 
 import React from 'react';
-import {
-  Cascader,
-} from 'antd';
+// import {
+//   Cascader,
+// } from 'antd';
 import { Chart, Axis, Geom, Tooltip, Coord, Legend, Label } from 'bizcharts';
 import { DataSet } from '@antv/data-set';
 
-import options from '../../assets/addressData';
+// import options from '../../assets/addressData';
 
 class Industrial extends React.Component {
   render() {
@@ -40,7 +40,7 @@ class Industrial extends React.Component {
     }
     return (
       <div>
-        <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" />
+        {/* <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" /> */}
         <Chart height={window.innerHeight} data={dv} scale={cols} padding={[ 80, 100, 80, 80 ]} forceFit>
           <Coord type='theta' radius={0.75} />
           <Axis name="percent" />

@@ -4,12 +4,12 @@
  */
 
 import React from 'react';
-import {
-  Cascader,
-} from 'antd';
+// import {
+//   Cascader,
+// } from 'antd';
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts';
 
-import options from '../../assets/addressData';
+// import options from '../../assets/addressData';
 
 class Economics extends React.Component {
   render() {
@@ -32,7 +32,7 @@ class Economics extends React.Component {
     };
     return (
       <div style={{ overflow: 'scroll' }}>
-        <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" />
+        {/* <Cascader options={options} onChange={() => this.handleChange} placeholder="选择地区" /> */}
         <Chart height={400} data={data} scale={cols} forceFit>
           <Axis name="year" />
           <Axis name="GDP" />

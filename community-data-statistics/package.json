@@ -18,6 +18,7 @@
     "nprogress": "^0.2.0",
     "qs": "^6.5.2",
     "rc-banner-anim": "^1.0.1",
+    "rc-queue-anim": "^1.5.0",
     "rc-tween-one": "^1.7.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"

@@ -8,7 +8,7 @@ export default {
   namespace: 'weather',
 
   state: {
-    data: [],
+    data: '',
   },
 
   effects: {
@@ -16,8 +16,10 @@ export default {
       console.log('dnsdoqiw');
       const res = yield call(getWeather);
       console.log('res>>>>>', res);
+      localStorage.setItem('weatherInfo', JSON.stringify(res));
       yield put({
         type: 'updateInfo',
+        payload: res
       })
     }
   },
