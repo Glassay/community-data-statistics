@@ -97,8 +97,8 @@ class Enterprise extends React.Component {
       key: 'scope',
     }, {
       title: '公司地址',
-      dataIndex: 'adress',
-      key: 'adress',
+      dataIndex: 'address',
+      key: 'address',
     },{
       render: (text, ID) => (
         <span>

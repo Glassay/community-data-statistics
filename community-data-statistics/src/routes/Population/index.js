@@ -6,6 +6,7 @@
 import React from 'react';
 import {
   Cascader,
+  Button
 } from 'antd';
 import { connect } from 'dva';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
@@ -15,21 +16,32 @@ import options from '../../assets/addressData';
 
 class Population extends React.Component {
   state = {
-    select: null
+    select: null,
+    area: '',
   }
 
   handleChange = (value) => {
     console.log(value);
     console.log(value[0] + value[1]);
+    this.setState({
+      area: value[0] + value[1]
+    })
+  }
+
+  handleSearch = () => {
+    console.log('qweqwe', this.state.areaInfo)
     this.props.dispatch({
-      type: 'population/getAge',
-      payload: value[0] + value[1]
+      type: 'age/getInfos',
+      payload: {
+        area: this.state.area
+      }
     })
   }
 
   render() {
     // 数据源
-    // const { age } = this.props;
+    const { infos } = this.props;
+    console.log('infos+++++', infos);
     const data = [
       { genre: '儿童', count: 275 },
       { genre: '少年', count: 115 },
@@ -50,6 +62,13 @@ class Population extends React.Component {
           onChange={this.handleChange}
           placeholder="选择地区"
         />
+        <Button
+          type="primary"
+          style={{ marginTop: 15, marginLeft: 30 }}
+          onClick={this.handleSearch}
+        >
+          查询
+        </Button>
         <Chart className={styles.chart} width={600} height={400} data={data} scale={cols}>
           <Axis name="genre" />
           <Axis name="count" />
@@ -63,5 +82,5 @@ class Population extends React.Component {
 }
 
 export default connect(state => ({
-  age: state.population.age
+  infos: state.age.infos
 }))(Population);

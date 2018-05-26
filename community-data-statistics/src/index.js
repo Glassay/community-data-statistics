@@ -19,6 +19,8 @@ app.model(require('./models/industrial').default);
 app.model(require('./models/enterprise').default);
 app.model(require('./models/community').default);
 app.model(require('./models/building').default);
+app.model(require('./models/inform').default);
+app.model(require('./models/age').default);
 
 // 4. Router
 app.router(require('./router').default);

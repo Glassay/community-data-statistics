@@ -24,13 +24,14 @@ export default {
       console.log('insertInfo>>>>', res);
       if(res.status === 'success') {
         message.success('添加成功！');
+        const refreshRes = yield call(getInfo);
+        yield put({
+          type: 'updateInfo',
+          payload: refreshRes
+        })
       } else {
         message.error('添加失败！');
       }
-      yield put({
-        type: 'updateInfo',
-        payload: res
-      })
     },
 
     *deleteInfos({ payload }, { call, put }) {

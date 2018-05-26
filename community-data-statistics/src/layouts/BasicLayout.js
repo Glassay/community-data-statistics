@@ -17,6 +17,7 @@ import CPopulation from '../routes/Staff/CPopulation';
 import Enterprise from '../routes/Staff/Enterprise';
 import Building from '../routes/Building';
 import Community from '../routes/Community';
+import Inform from '../routes/Staff/Inform';
 
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -96,6 +97,9 @@ class BasicLayout extends React.Component {
                   <Menu.Item key="8">
                     <Link to="/city/community-building">楼房数据</Link>
                   </Menu.Item>
+                  <Menu.Item key="9">
+                    <Link to="/city/community-inform">发布公告</Link>
+                  </Menu.Item>
                 </SubMenu>
               </Menu>
             </Sider>
@@ -138,6 +142,7 @@ class BasicLayout extends React.Component {
                     <Route path="/city/community-enterprise" render={() => <Enterprise />} />
                     <Route path="/city/community-building" render={() => <Building />} />
                     <Route path="/city/community-name" render={() => <Community />} />
+                    <Route path="/city/community-inform" render={() => <Inform />} />
                   </Switch>
                 </div>
               </Content>

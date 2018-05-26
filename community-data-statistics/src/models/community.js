@@ -1,6 +1,6 @@
 import { message } from 'antd';
 
-import { getAllInfo, insertInfo, deleteInfo, searchInfo, modifyInfo } from '../services/community';
+import { getAllInfo, insertInfo, deleteInfo, searchInfo } from '../services/community';
 
 export default {
   namespace: 'community',
