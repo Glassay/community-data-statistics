@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { Button } from 'antd';
 import { connect } from 'dva';
 
 import WeatherCard from '../../components/WeatherCard';
@@ -15,29 +16,33 @@ class Weather extends React.Component {
       type: 'weather/getInfo'
     })
   }
+  // handleSearch = () => {
+  //   this.props.dispatch({
+  //     type: 'weather/getInfo'
+  //   })
+  // }
   render() {
-    const { loading, data } = this.props;
-    const infos = JSON.parse(localStorage.getItem('weatherInfo'));
-    console.log('data>>>>>>', data);
+    const { loading, weathers } = this.props;
+    // const infos = JSON.parse(localStorage.getItem('weatherInfo'));
+    console.log('data>>>>>>', weathers);
     console.log('loading>>>>>', loading);
-    console.log('infos++++++', infos);
+    // console.log('infos++++++', infos);
     return (
       <div>
         <h2 style={{ color: '#99ddcc' }}>保定</h2>
         {
-          infos === null ? null :
-          infos.weather[0].future.map(item => (
+          weathers === '' || undefined ? null :
+          weathers.value[0].weathers.map(item => (
             <div
               key={item.date}
               className={styles.container}
             >
               <WeatherCard
                 date={item.date}
-                day={item.day}
-                high={item.high}
-                low={item.low}
-                text={item.text}
-                wind={item.wind}
+                week={item.week}
+                temp_day_c={item.temp_day_c}
+                temp_night_c={item.temp_night_c}
+                weather={item.weather}
               />
             </div>
           ))
@@ -50,5 +55,5 @@ class Weather extends React.Component {
 
 export default connect(state => ({
   loading: state.loading.models.weather,
-  data: state.weather.data,
+  weathers: state.weather.weathers,
 }))(Weather);
